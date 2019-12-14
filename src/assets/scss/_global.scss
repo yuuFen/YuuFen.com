@@ -7,9 +7,9 @@ html {
   font-size: 14px;
 }
 body {
+  position: relative;
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.2rem;
-  background-color: #494F4E;
+  font-family: 'Roboto Slab', sans-serif;
+  background-color: $clr-bg-dark;
   -webkit-font-smoothing: antialiased;
 }

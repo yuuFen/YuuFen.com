@@ -1,13 +1,10 @@
-$clr-primary: #494F4E;
-$clr-primary-lighter: #B6B0B1;
-$clr-primary-light: #727B79;
-$clr-primary-dark: #4D4D4D;
-$clr-primary-darker: #373B3B;
+$clr-primary:          #786f69;
+$clr-primary-light:    #d1c4af;
+$clr-primary-dark:     #585356;
+$clr-primary-darker:   #504a4b;
 
-$clr-secondary-light: #336666;
-$clr-secondary-dark: #374F4B;
-
-$clr-opposite: #FFECFC;
+$clr-secondary-light:  #a39990;
+$clr-secondary-dark:   #585153;
 
 $clr-mask: transparentize($clr-primary-dark, 0.2);
 
