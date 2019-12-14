@@ -62,7 +62,7 @@ export default {
   },
   mounted() {
     this.resize()
-    addEventListener('resize', this.resize)
+    document.addEventListener('resize', this.resize)
   }
 
 }
