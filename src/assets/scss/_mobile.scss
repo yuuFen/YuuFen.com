@@ -1,0 +1,16 @@
+#mobile {
+  position: absolute;
+
+  // 初始化，会被覆盖
+  left: 50%;
+  top: 50%;
+  margin: 0 auto;
+  width: $mobile-width;
+  
+  // 文字不可选中
+  user-select: none;
+  // 触发GPU硬件加速
+  transform: translate3d(0, 0, 0);
+
+  background-color: #fff;
+}
