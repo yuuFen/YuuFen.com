@@ -1,3 +1,16 @@
+%text-shadow {
+  text-shadow: 1px 1px rgba($clr-primary-dark, 0.5);
+}
+%text-shadow-dark {
+  text-shadow: 1px 1px rgba($clr-primary-darker, 15%);
+}
+%text-shadow-light {
+  text-shadow: 1px 1px rgba($clr-secondary-light, 0.5);
+}
+
+
+
+
 // reset
 * {
   box-sizing: border-box;
