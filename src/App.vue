@@ -2,7 +2,16 @@
   <div id="content" style="height:100vh">
     <a @click="changeLang()" id="lang-config" :class="'lang-' + lang"></a>
     <div id="mobile">
-
+      <div id="system-status">
+        <div id="system-status-left" class="system-status-content">
+          4G
+        </div>
+        <div id="system-status-centerr" class="system-status-content">
+          晚上 22:59
+        </div>
+        <div id="system-status-right" class="system-status-content">
+        </div>
+      </div>
 
     </div>
   </div>
