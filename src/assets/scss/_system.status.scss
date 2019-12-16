@@ -17,7 +17,6 @@
   }
 
   #system-status-left {
-    text-align: left;
     padding-left: $spacing-sm;
   }
 
@@ -30,10 +29,37 @@
     text-align: right;
     padding-right: $spacing-sm;
   }
-  
 
+  #system-status-signal {
+    display: inline-block;
+    .signal {
+      display: inline-block;
+      width: 3px;
+      margin-right: 1px;
+      border-radius: 2px;
+      background-color: rgba($clr-text-lightest, 0.4);
+      &.active {
+        background-color: $clr-text-lightest;
+      }
+      &.signal-1 {
+        height: 4px;
+      }
+      &.signal-2 {
+        height: 6px;
+      }
+      &.signal-3 {
+        height: 8px;
+      }
+      &.signal-4 {
+        height: 10px;
+      }
+    }
+  }
 
-
+  #system-status-connection {
+    display: inline-block;
+    margin: 0 3px;
+  }
 }
 
 @media (max-width: 480px) {

@@ -4,7 +4,7 @@
     <div id="mobile">
       <div id="system-status">
         <div id="system-status-left" class="system-status-content">
-          4G
+          <m-status-signal></m-status-signal>
         </div>
         <div id="system-status-center" class="system-status-content">
           <m-status-time></m-status-time>
