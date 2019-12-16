@@ -6,8 +6,8 @@
         <div id="system-status-left" class="system-status-content">
           4G
         </div>
-        <div id="system-status-centerr" class="system-status-content">
-          晚上 22:59
+        <div id="system-status-center" class="system-status-content">
+          <m-status-time></m-status-time>
         </div>
         <div id="system-status-right" class="system-status-content">
         </div>
@@ -71,7 +71,7 @@ export default {
   },
   mounted() {
     this.resize()
-    document.addEventListener('resize', this.resize)
+    addEventListener('resize', this.resize)
   }
 
 }
