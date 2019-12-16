@@ -29,16 +29,16 @@ $fs-xs: 0.8571rem;
 $fs-lg: 1.0714rem;
 
 
-$distance-basic: 1.0714rem;
-$distance-lg: 1.4286rem; 
-$distance-sm: 0.7143rem; 
-$distance-xs: 0.4286rem; 
-$distance-h: 1.2857rem; 
-$distance-inline: 0.3571rem;
+$spacing-basic: 1.0714rem;
+$spacing-lg: 1.4286rem; 
+$spacing-sm: 0.7143rem; 
+$spacing-xs: 0.4286rem; 
+$spacing-h: 1.2857rem; 
+$spacing-inline: 0.3571rem;
 
-$radius: $distance-sm;
-$radius-lg: $distance-lg;
-$radius-sm: $distance-inline;
+$radius: $spacing-sm;
+$radius-lg: $spacing-lg;
+$radius-sm: $spacing-inline;
 
 $system-status-height: 1.7857rem;
 $out-app-bottom-height: 5.3571rem;
