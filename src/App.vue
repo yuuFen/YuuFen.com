@@ -1,7 +1,7 @@
 <template>
   <div id="content" style="height:100vh">
     <a @click="changeLang()" id="lang-config" :class="'lang-' + lang"></a>
-    <div id="mobile">
+    <div id="mobile" :style="`background-image: url(${mobileBgImg})`">
       <div id="system-status">
         <div id="system-status-left" class="system-status-content">
           <m-status-signal></m-status-signal>
@@ -11,21 +11,23 @@
         </div>
         <div id="system-status-right" class="system-status-content"></div>
       </div>
-    </div>
-    <!-- end of header -->
+      <!-- end of header -->
 
+    </div>
   </div>
 </template>
 
 <script>
 import { getLang, setLang } from './assets/js/utils/lang'
 import colors from './assets/js/constants/colors'
+import { getPixelImage } from './assets/js/utils/image'
 
 export default {
   name: 'app',
   data() {
     return {
       lang: getLang(),
+      mobileBgImg: '',
     }
   },
   methods: {
@@ -33,10 +35,12 @@ export default {
       const lang = this.lang === 'zh' ? 'en' : 'zh'
       setLang(lang)
     },
-    resize() {
+    resizeMobile() {
       const mobile = document.getElementById('mobile')
-      if (window.innerWidth < 480) {
-        // Mobile design
+
+      if (window.innerWidth <= 480) {
+        // mobile设备时这里就return了,所以把绘制代码放在下面不会执行,
+        // 所以另外新加了一个监听
         mobile.style.width = '100%'
         mobile.style.height = '100%'
         mobile.style.marginLeft = '-50%'
@@ -50,11 +54,13 @@ export default {
 
       const targetWidth = 750
       const targetHeight = 1334
-      const ratio = targetWidth / targetHeight  // 目标宽高比
+      const ratio = targetWidth / targetHeight // 目标宽高比
 
-      if (width / height > ratio) {  // 如果太宽
+      if (width / height > ratio) {
+        // 如果太宽
         width = Math.round(height * ratio)
-      } else {  //如果太高
+      } else {
+        //如果太高
         height = Math.round(width / ratio)
       }
       mobile.style.width = width + 'px'
@@ -66,17 +72,23 @@ export default {
       // 移动元素的定位标识点至body的正中间
       mobile.style.top = '50%'
       mobile.style.left = '50%'
-      
-      // end of mobile-container
-
-      
-
-
+    },
+    resizeMobileBgImg() {
+      const mobile = document.getElementById('mobile')
+      this.mobileBgImg = getPixelImage({
+        width: mobile.clientWidth,
+        height: mobile.clientHeight,
+        radius: 3,
+        fillColor: colors.bg.light,
+        borderColor: colors.border,
+      })
     },
   },
   mounted() {
-    this.resize()
-    addEventListener('resize', this.resize)
+    this.resizeMobile()
+    this.resizeMobileBgImg()
+    window.addEventListener('resize', this.resizeMobile)
+    window.addEventListener('resize', this.resizeMobileBgImg)
   },
 }
 </script>
