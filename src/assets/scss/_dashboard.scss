@@ -1,0 +1,15 @@
+.dashboard {
+  // 绝对定位的padding-box + padding, 实现子元素content占满父元素剩余高度 
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding-top: $system-status-height;
+}
+
+@media (max-width: 480px) {
+  .dashboard {
+      padding-top: $spacing-sm;
+  }
+}

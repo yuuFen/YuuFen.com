@@ -13,6 +13,10 @@
       </div>
       <!-- end of header -->
 
+      <!-- 绝对定位的padding-box + padding, 实现子元素content占满父元素剩余高度 -->
+      <div class="dashboard">
+        test
+      </div>
     </div>
   </div>
 </template>
