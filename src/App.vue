@@ -9,16 +9,18 @@
         <div id="system-status-center" class="system-status-content">
           <m-status-time></m-status-time>
         </div>
-        <div id="system-status-right" class="system-status-content">
-        </div>
+        <div id="system-status-right" class="system-status-content"></div>
       </div>
-
     </div>
+    <!-- end of header -->
+
   </div>
 </template>
 
 <script>
 import { getLang, setLang } from './assets/js/utils/lang'
+import colors from './assets/js/constants/colors'
+
 export default {
   name: 'app',
   data() {
@@ -32,47 +34,48 @@ export default {
       setLang(lang)
     },
     resize() {
-      const mobile = document.getElementById('mobile');
+      const mobile = document.getElementById('mobile')
 
       if (window.innerWidth < 480) {
         // Mobile design
-        mobile.style.width = '100%';
-        mobile.style.height = '100%';
-        mobile.style.marginLeft = '-50%';
-        mobile.style.marginTop = '0';
-        mobile.style.top = '0';
-        return;
+        mobile.style.width = '100%'
+        mobile.style.height = '100%'
+        mobile.style.marginLeft = '-50%'
+        mobile.style.marginTop = '0'
+        mobile.style.top = '0'
+        return
       }
+      const margin = 15
+      let width = window.innerWidth - margin * 2
+      let height = window.innerHeight - margin * 2
 
-      const margin = 15;
-      let width = window.innerWidth - margin * 2;
-      let height = window.innerHeight - margin * 2;
-
-      const targetWidth = 750;
-      const targetHeight = 1334;
-      const ratio = targetWidth / targetHeight;
+      const targetWidth = 750
+      const targetHeight = 1334
+      const ratio = targetWidth / targetHeight
 
       if (width / height > ratio) {
-        width = Math.round(height * ratio);
+        width = Math.round(height * ratio)
+      } else {
+        height = Math.round(width / ratio)
       }
-      else {
-        height = Math.round(width / ratio);
-      }
 
-      mobile.style.width = width + 'px';
-      mobile.style.height = height + 'px';
-      mobile.style.marginLeft = '-' + width / 2 + 'px';
-      mobile.style.marginTop = '-' + height / 2 + 'px';
-      mobile.style.top = '50%';
-      mobile.style.left = '50%';
-    }
+      mobile.style.width = width + 'px'
+      mobile.style.height = height + 'px'
+      mobile.style.marginLeft = '-' + width / 2 + 'px'
+      mobile.style.marginTop = '-' + height / 2 + 'px'
+      mobile.style.top = '50%'
+      mobile.style.left = '50%'
+      
+      // end of mobile-container
+
+      
 
 
+    },
   },
   mounted() {
     this.resize()
     addEventListener('resize', this.resize)
-  }
-
+  },
 }
 </script>
