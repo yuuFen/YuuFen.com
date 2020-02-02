@@ -35,7 +35,6 @@ export default {
     },
     resize() {
       const mobile = document.getElementById('mobile')
-
       if (window.innerWidth < 480) {
         // Mobile design
         mobile.style.width = '100%'
@@ -51,18 +50,20 @@ export default {
 
       const targetWidth = 750
       const targetHeight = 1334
-      const ratio = targetWidth / targetHeight
+      const ratio = targetWidth / targetHeight  // 目标宽高比
 
-      if (width / height > ratio) {
+      if (width / height > ratio) {  // 如果太宽
         width = Math.round(height * ratio)
-      } else {
+      } else {  //如果太高
         height = Math.round(width / ratio)
       }
-
       mobile.style.width = width + 'px'
       mobile.style.height = height + 'px'
+
+      // 使元素的定位标识点在元素的正中间
       mobile.style.marginLeft = '-' + width / 2 + 'px'
       mobile.style.marginTop = '-' + height / 2 + 'px'
+      // 移动元素的定位标识点至body的正中间
       mobile.style.top = '50%'
       mobile.style.left = '50%'
       
