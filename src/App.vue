@@ -42,8 +42,6 @@ export default {
     resizeMobile() {
       const mobile = document.getElementById('mobile')
 
-      console.log(document.body.clientWidth)
-      console.log(window.innerWidth)  // chrome设备模式下刷新后 window.innerWidth 不正确,resize后才正确,真机/PC正常,不改
       if (window.innerWidth <= 480) {
         // mobile设备时这里就return了,所以把绘制代码放在下面不会执行,
         // 所以另外新加了一个监听
@@ -52,6 +50,7 @@ export default {
         mobile.style.marginLeft = '-50%'
         mobile.style.marginTop = '0'
         mobile.style.top = '0'
+        mobile.style.left = '50%'
         return
       }
       const margin = 15
