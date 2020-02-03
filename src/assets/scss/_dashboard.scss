@@ -13,3 +13,20 @@
       padding-top: $spacing-sm;
   }
 }
+
+  .app-group{
+    width: 100%;
+    @extend %clearfix;
+    box-sizing: border-box;
+    overflow: hidden;
+    @extend %nearest-neighbor;
+  }
+    .app-group-title {
+      color: $clr-text;
+      padding: $spacing-inline;
+      font-size: $fs-xs;
+      @extend %nearest-neighbor;
+    }
+    .app-group-content {
+      padding: $spacing-sm 0;
+    }
