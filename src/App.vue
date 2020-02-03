@@ -1,5 +1,5 @@
 <template>
-  <div id="content" style="height:100vh">
+  <div style="height:100vh">
     <a @click="changeLang()" id="lang-config" :class="'lang-' + lang"></a>
     <div id="mobile" :style="`background-image: url(${mobileBgImg})`">
       <div id="system-status">
@@ -15,7 +15,7 @@
 
       <!-- 绝对定位的padding-box + padding, 实现子元素content占满父元素剩余高度 -->
       <div class="dashboard">
-        test
+        <m-slider :pages="pages"></m-slider>
       </div>
     </div>
   </div>
@@ -25,12 +25,14 @@
 import { getLang, setLang } from './assets/js/utils/lang'
 import colors from './assets/js/constants/colors'
 import { getPixelImage } from './assets/js/utils/image'
+import pagesConfig from './assets/js/configs/pages'
 
 export default {
   name: 'app',
   data() {
     return {
       lang: getLang(),
+      pages: pagesConfig,
       mobileBgImg: '',
     }
   },
