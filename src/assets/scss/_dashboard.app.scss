@@ -1,0 +1,84 @@
+$app-img-size: 28;
+$app-img-depth: 4;
+$app-max-height: $app-size * ($app-img-size + $app-img-depth) / $app-img-size;
+$app-depth: $app-size * $app-img-depth / $app-img-size;
+$msg-counter-size: 20px;
+
+.app {
+  float: left;
+  width: 25%;
+  box-sizing: border-box;
+  text-align: center;
+  margin-bottom: 10px;
+  .app-icon {
+    display: block;
+    width: $app-size;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    position: relative;
+    &:active {
+      .app-img-content {
+        margin-top: $app-depth;
+      }
+      .app-img-bg {
+        background-position-y: -$app-max-height;
+        margin-top: $app-depth;
+        height: $app-size !important;
+      }
+    }
+
+    .app-msg-counter {
+      width: $msg-counter-size;
+      height: $msg-counter-size;
+      overflow: hidden;
+      position: absolute;
+      top: -$msg-counter-size / 2 + 2;
+      right: -$msg-counter-size / 2 + 2;
+      z-index: 11;
+      font-size: $fs-xs;
+      padding-top: 1px;
+      color: $clr-text;
+    }
+    .app-img-container {
+      width: $app-size;
+      height: $app-max-height;
+      position: relative;
+
+      .img {
+        @extend %nearest-neighbor;
+        width: $app-size;
+      }
+      .app-img-content {
+        height: $app-size;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        background: url('../image/app-icon-all.png');
+        background-size: 400%;
+      }
+      .app-img-bg {
+        height: $app-max-height;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-image: url('../image/app-button.png');
+        background-size: 400%;
+        &.light {
+          background-position-x: 0;
+        }
+        &.medium {
+          background-position-x: -$app-size;
+        }
+        &.dark {
+          background-position-x: -$app-size * 2;
+        }
+      }
+    }
+  }
+  .app-name {
+    color: $clr-text-lightest;
+    font-size: $fs-sm;
+    @extend %text-shadow;
+  }
+}
