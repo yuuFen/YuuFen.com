@@ -20,6 +20,7 @@
     box-sizing: border-box;
     overflow: hidden;
     @extend %nearest-neighbor;
+    margin-bottom: $spacing-sm;
   }
     .app-group-title {
       color: $clr-text;

@@ -55,4 +55,32 @@ export default {
     logoTheme: themes.medium,
     link: 'https://dribbble.com/',
   },
+  email: {
+    name: {
+      zh: 'Email',
+      en: 'Email',
+    },
+    pos: [1, 2],
+    logoTheme: themes.medium,
+    appStatusTheme: themes.light,
+    link: 'mailto:me@yuufen.com',
+  },
+  blog: {
+    name: {
+      zh: '博客',
+      en: 'Blog',
+    },
+    pos: [3, 2],
+    logoTheme: themes.light,
+    link: 'http://yuufen.com/blog/',
+  },
+  comment: {
+    name: {
+      zh: '留言',
+      en: 'Comments',
+    },
+    pos: [3, 5],
+    logoTheme: themes.dark,
+    appStatusTheme: themes.dark,
+  },
 }
