@@ -12,8 +12,8 @@
     <div class="slider-page-container">
       <m-slider-page v-for="page in pages" :key="page.id" :app-groups="page.groups" v-bind="$attrs"></m-slider-page>
     </div>
-    <div class="slider-control" ref="ctrl">
-      <span class="slider-control-btn" v-for="page in pages" :key="page.id"></span>
+    <div class="slider-control">
+      <span class="slider-control-btn" :class="{'selected': pageId === index}" v-for="(page, index) in pages" :key="page.id"></span>
     </div>
   </div>
 </template>
@@ -94,10 +94,6 @@ export default {
           clearInterval(timer) // mouseUp的时候又会set一个计时器，所以这里mouseDown的作用相当于暂停
         }
       }, 5)
-      
-
-      const ctrl = this.$refs.ctrl
-
     },
   },
 }
