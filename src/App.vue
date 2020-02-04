@@ -1,5 +1,5 @@
 <template>
-  <div style="height:100vh" @touchmove.prevent>
+  <div style="height:100vh">
     <a @click="changeLang()" id="lang-config" :class="'lang-' + lang"></a>
     <div id="mobile" :style="`background-image: url(${mobileBgImg})`">
       <div id="system-status">
@@ -14,7 +14,7 @@
       <!-- end of header -->
 
       <!-- 绝对定位的padding-box + padding, 实现子元素content占满父元素剩余高度 -->
-      <div class="dashboard">
+      <div class="dashboard" @touchmove.prevent>
         <m-slider :pages="pages" :width="mobileWidth"></m-slider>
       </div>
     </div>
