@@ -3,13 +3,24 @@
   top: $system-status-height;
   bottom: $out-app-bottom-height;
   left: 0;
-  width: 98.4%;
-  margin: 0 0.8%;
+  width: 100%;
+  padding: 0 $spacing-smer / 2; //是padding-box,定位点在padding的左上角
+  // padding用百分号适配可能会更好一点,但是因为小数点后面位数太高,page间可能会有一像素的差别
 }
-  .slider-page {
+  .slider-page-container {
     width: 100%;
     height: 100%;
-    display: inline-block;
-    flex-shrink: 0;
-    padding: 0 $spacing-smer;
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    display: flex;
+    overflow: hidden;
   }
+    .slider-page {
+      flex-shrink: 0;
+      width: 100%;
+      height: 100%;
+      display: inline-block;
+      padding: 0 $spacing-smer;
+    }
+  
