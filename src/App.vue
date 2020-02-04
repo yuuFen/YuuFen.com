@@ -15,7 +15,7 @@
 
       <!-- 绝对定位的padding-box + padding, 实现子元素content占满父元素剩余高度 -->
       <div class="dashboard">
-        <m-slider :pages="pages"></m-slider>
+        <m-slider :pages="pages" :width="mobileWidth"></m-slider>
       </div>
     </div>
   </div>
@@ -32,6 +32,7 @@ export default {
   data() {
     return {
       lang: getLang(),
+      mobileWidth: null,
       pages: pagesConfig,
       mobileBgImg: '',
     }
@@ -53,6 +54,7 @@ export default {
         mobile.style.marginTop = '0'
         mobile.style.top = '0'
         mobile.style.left = '50%'
+        this.mobileWidth = mobile.clientWidth
         return
       }
       const margin = 15
@@ -72,6 +74,7 @@ export default {
       }
       mobile.style.width = width + 'px'
       mobile.style.height = height + 'px'
+      this.mobileWidth = mobile.clientWidth
 
       // 使元素的定位标识点在元素的正中间
       mobile.style.marginLeft = '-' + width / 2 + 'px'

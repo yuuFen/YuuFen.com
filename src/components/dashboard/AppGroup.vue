@@ -17,6 +17,7 @@ export default {
   props: {
     title: { type: Object, default: () => '' },
     apps: { type: Array, default: () => [] },
+    width: { type: Number, default: () => null },
   },
   data() {
     return {
@@ -25,10 +26,12 @@ export default {
       appGroupBgImg: '',
     }
   },
+  watch: {
+    width: 'resize'
+  },
   methods: {
     resize() {
       const group = this.$el
-      console.log(group.clientWidth)
 
       this.appGroupBgImg = getPixelImage({
         width: group.clientWidth,
@@ -44,10 +47,6 @@ export default {
         fillColor: colors.appGroupTitle,
       })
     },
-  },
-  mounted() {
-    this.resize()
-    window.addEventListener('resize', this.resize)
   },
 }
 </script>
