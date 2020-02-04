@@ -1,5 +1,5 @@
 <template>
-  <div style="height:100vh">
+  <div style="height:100vh" @touchmove.prevent>
     <a @click="changeLang()" id="lang-config" :class="'lang-' + lang"></a>
     <div id="mobile" :style="`background-image: url(${mobileBgImg})`">
       <div id="system-status">
