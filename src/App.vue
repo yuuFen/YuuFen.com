@@ -16,6 +16,12 @@
       <!-- 绝对定位的padding-box + padding, 实现子元素content占满父元素剩余高度 -->
       <div class="dashboard" @touchmove.prevent>
         <m-slider :pages="pages" :width="mobileWidth"></m-slider>
+        <div class="dashboard-bottom" :style="`background-image:url(${mobileBottomBgImg})`">
+          <m-app app-id="wechat"></m-app>
+          <m-app app-id="wechat"></m-app>
+          <m-app app-id="wechat"></m-app>
+          <m-app app-id="wechat"></m-app>
+        </div>
       </div>
     </div>
   </div>
@@ -35,6 +41,7 @@ export default {
       mobileWidth: null,
       pages: pagesConfig,
       mobileBgImg: '',
+      mobileBottomBgImg: '',
     }
   },
   methods: {
@@ -91,6 +98,15 @@ export default {
         radius: 3,
         fillColor: colors.bg.light,
         borderColor: colors.border,
+      })
+      
+      const bottom = document.getElementsByClassName('dashboard-bottom')[0]
+      this.mobileBottomBgImg = getPixelImage({
+        width: bottom.clientWidth,
+        height: bottom.clientHeight,
+        radius: [0, 0, 2, 2],
+        fillColor: colors.appGroup,
+        margin: [0, 1, 1, 1],
       })
     },
   },

@@ -83,4 +83,12 @@ export default {
     logoTheme: themes.dark,
     appStatusTheme: themes.dark,
   },
+  wechat: {
+    name: {
+      zh: '微信',
+      en: 'Wechat',
+    },
+    pos: [0, 1],
+    logoTheme: themes.dark,
+  },
 }

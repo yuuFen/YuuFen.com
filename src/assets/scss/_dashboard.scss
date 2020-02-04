@@ -1,5 +1,5 @@
 .dashboard {
-  // 绝对定位的padding-box + padding, 实现子元素content占满父元素剩余高度 
+  // 绝对定位的padding-box + padding, 实现子元素content占满父元素剩余高度
   position: absolute;
   left: 0;
   top: 0;
@@ -10,24 +10,42 @@
 
 @media (max-width: 480px) {
   .dashboard {
-      padding-top: $spacing-sm;
+    padding-top: $spacing-sm;
   }
 }
 
-  .app-group{
-    width: 100%;
-    @extend %clearfix;
-    box-sizing: border-box;
-    overflow: hidden;
-    @extend %nearest-neighbor;
-    margin-bottom: $spacing-sm;
+.app-group {
+  width: 100%;
+  @extend %clearfix;
+  box-sizing: border-box;
+  overflow: hidden;
+  @extend %nearest-neighbor;
+  margin-bottom: $spacing-sm;
+}
+.app-group-title {
+  color: $clr-text;
+  padding: $spacing-inline;
+  font-size: $fs-xs;
+  @extend %nearest-neighbor;
+}
+.app-group-content {
+  padding: $spacing-sm 0;
+}
+.dashboard-bottom {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: $out-app-bottom-height;
+  width: 100%;
+  padding: $spacing-sm 0;
+
+  .app {
+    margin-bottom: 0;
   }
-    .app-group-title {
-      color: $clr-text;
-      padding: $spacing-inline;
-      font-size: $fs-xs;
-      @extend %nearest-neighbor;
+    .app-icon{
+      margin-bottom: 0;
     }
-    .app-group-content {
-      padding: $spacing-sm 0;
+    .app-name {
+      display: none;
     }
+}
