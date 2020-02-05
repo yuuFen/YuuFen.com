@@ -44,7 +44,16 @@ export default {
       mobileBottomBgImg: '',
     }
   },
+  created() {
+    this.$root.$on('open-app', (appId,event) => {
+      this.openApp(appId,event)
+    })
+  },
   methods: {
+    openApp(name,event) {
+      console.log(name)
+      console.log(event)
+    },
     changeLang() {
       const lang = this.lang === 'zh' ? 'en' : 'zh'
       setLang(lang)
