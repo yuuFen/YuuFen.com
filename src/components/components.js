@@ -8,7 +8,11 @@ import SliderPage from './dashboard/SliderPage'
 import AppGroup from './dashboard/AppGroup'
 import App from './dashboard/App'
 
-
+import InApp from './dashboard/InApp'
+import Wechat from './app/Wechat'
+import Album from './app/Album'
+import Zhifubao from './app/Zhifubao'
+import Comment from './app/Comment'
 
 
 Vue.component('m-status-time', StatusTime)
@@ -18,3 +22,9 @@ Vue.component('m-slider', Slider)
 Vue.component('m-slider-page', SliderPage)
 Vue.component('m-app-group', AppGroup)
 Vue.component('m-app', App)
+
+Vue.component('m-inapp', InApp)
+Vue.component('m-app-wechat', Wechat)
+Vue.component('m-app-album', Album)
+Vue.component('m-app-zhifubao', Zhifubao)
+Vue.component('m-app-comment', Comment)
