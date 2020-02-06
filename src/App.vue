@@ -1,7 +1,7 @@
 <template>
   <div style="height:100vh">
     <a @click="changeLang()" id="lang-config" :class="'lang-' + lang"></a>
-    <div id="mobile" :style="`background-image: url(${mobileBgImg})`">
+    <div id="mobile" :class="'status-theme-' + statusTheme" :style="`background-image: url(${mobileBgImg})`">
       <div id="system-status">
         <div id="system-status-left" class="system-status-content">
           <m-status-signal></m-status-signal>
@@ -18,11 +18,12 @@
         <m-slider :pages="pages" :width="mobileWidth"></m-slider>
         <div class="dashboard-bottom" :style="`background-image:url(${mobileBottomBgImg})`">
           <m-app app-id="wechat"></m-app>
-          <m-app app-id="wechat"></m-app>
-          <m-app app-id="wechat"></m-app>
-          <m-app app-id="wechat"></m-app>
+          <m-app app-id="album"></m-app>
+          <m-app app-id="zhifubao"></m-app>
+          <m-app app-id="github"></m-app>
         </div>
       </div>
+      <m-inapp v-if="inApp" :app-id="inAppId" @exit="exitApp"></m-inapp>
     </div>
   </div>
 </template>
@@ -32,6 +33,28 @@ import { getLang, setLang } from './assets/js/utils/lang'
 import colors from './assets/js/constants/colors'
 import { getPixelImage } from './assets/js/utils/image'
 import pagesConfig from './assets/js/configs/pages'
+import icons from './assets/js/constants/icons'
+
+const openAppDuration = 0.3
+
+function setInAppAnimation(startX, startY, startW, startH, startOp, endX, endY, endW, endH, endOp) {
+  const target = document.getElementsByClassName('mobile-inapp')[0]
+  target.style['transition-duration'] = '0'
+  target.style.left = startX + 'px'
+  target.style.top = startY + 'px'
+  target.style.width = startW
+  target.style.height = startH
+  target.style.opacity = startOp
+
+  setTimeout(() => {
+    target.style['transition-duration'] = openAppDuration + 's'
+    target.style.left = endX + 'px'
+    target.style.top = endY + 'px'
+    target.style.width = endW
+    target.style.height = endH
+    target.style.opacity = endOp
+  })
+}
 
 export default {
   name: 'app',
@@ -42,17 +65,44 @@ export default {
       pages: pagesConfig,
       mobileBgImg: '',
       mobileBottomBgImg: '',
+      inApp: false,
+      inAppId: null,
+      lastAppOpenPosition: [0, 0],
+      statusTheme: 'default',
     }
   },
   created() {
-    this.$root.$on('open-app', (appId,event) => {
-      this.openApp(appId,event)
+    this.$root.$on('open-app', (appId, event) => {
+      this.openApp(appId, event)
     })
   },
   methods: {
-    openApp(name,event) {
-      console.log(name)
-      console.log(event)
+    openApp(name, event) {
+      this.inApp = true
+      this.inAppId = name
+
+      this.$nextTick(() => { // 需要等InApp创建后才能操作它
+        const mobile = document.getElementById('mobile')
+        const mobileLeft = mobile.offsetLeft
+        const mobileTop = mobile.offsetTop
+
+        this.statusTheme = icons[name].appStatusTheme || 'dark'
+        const x = event.clientX - mobileLeft
+        const y = event.clientY - mobileTop
+        setInAppAnimation(x, y, '0', '0', '0', '0', '0', '100%', '100%', '1')
+        this.lastAppOpenPosition = [x, y]
+      })
+    },
+    exitApp() {
+      const x = this.lastAppOpenPosition[0]
+      const y = this.lastAppOpenPosition[1]
+      setInAppAnimation('0', '0', '100%', '100%', '1', x, y, '0', '0', '0')
+
+      setTimeout(() => {  // 等setInAppAnimation执行完后再销毁InApp
+        this.inApp = false
+        this.statusTheme = 'default'
+        this.inAppId = null
+      }, openAppDuration * 1000)  
     },
     changeLang() {
       const lang = this.lang === 'zh' ? 'en' : 'zh'
@@ -108,7 +158,7 @@ export default {
         fillColor: colors.bg.light,
         borderColor: colors.border,
       })
-      
+
       const bottom = document.getElementsByClassName('dashboard-bottom')[0]
       this.mobileBottomBgImg = getPixelImage({
         width: bottom.clientWidth,

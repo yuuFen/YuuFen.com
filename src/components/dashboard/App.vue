@@ -30,11 +30,14 @@ export default {
       appIconPosition: '',
       msgCountBgImg: '',
       isWechatOpen: false,
+      isZhifubaoOpen: false,
     }
   },
   computed: {
     msgCount() {
       if (this.appId === 'wechat' && this.isWechatOpen === false) {
+        return 1
+      } else if (this.appId === 'zhifubao' && this.isZhifubaoOpen === false) {
         return 1
       } else {
         return 0
@@ -62,6 +65,9 @@ export default {
       }
       if (this.appId === 'wechat') {
         this.isWechatOpen = true
+      }
+      if (this.appId === 'zhifubao') {
+        this.isZhifubaoOpen = true
       }
 
       this.$root.$emit('open-app', this.appId, event)
