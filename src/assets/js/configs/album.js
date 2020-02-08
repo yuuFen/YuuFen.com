@@ -1,37 +1,25 @@
+const img = require('../../album/projects/gooday.png')
+
 export default [
   {
     title: {
       zh: '项目',
       en: 'Projects',
     },
-    photos:[
-      'assets/album/projects/pixel-wedding.png',
-      'assets/album/projects/calendar.png',
-      'assets/album/projects/gooday.png',
-      'assets/album/projects/moonight.png'
-    ]
+    photos: [img, img, img, img],
   },
   {
     title: {
       zh: '设计作品',
-      en: 'Design'
+      en: 'Design',
     },
-    photos:[
-      'assets/album/projects/pixel-wedding.png',
-      'assets/album/projects/calendar.png',
-      'assets/album/projects/gooday.png',
-      'assets/album/projects/moonight.png'
-    ]
-  },  {
+    photos: [img, img, img, img],
+  },
+  {
     title: {
       zh: '日常照片',
-      en: 'Routine'
+      en: 'Routine',
     },
-    photos:[
-      'assets/album/projects/pixel-wedding.png',
-      'assets/album/projects/calendar.png',
-      'assets/album/projects/gooday.png',
-      'assets/album/projects/moonight.png'
-    ]
+    photos: [img, img, img, img],
   },
 ]

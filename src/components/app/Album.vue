@@ -4,7 +4,7 @@
       <h3>{{ group.title[lang] }}</h3>
       <div class="album-group-content">
         <div class="album-photo-container" v-for="(photo, index) in group.photos" :key="index">
-          <a href="" class="album-photo-img pixel-img" :style="`background-image: ${photo.thumbnail ? `url('${photo.thumbnail}')` : 'transparent'})`"></a>
+          <a href="" class="album-photo-img pixel-img" :style="{ 'background-image': photo.thumbnail ? `url('${photo.thumbnail}')` : 'transparent' }"></a>
         </div>
       </div>
     </div>
@@ -53,7 +53,7 @@ export default {
           obj.thumbnailHeight = height
           obj.thumbnail = imageProcessor.doSunglass(img, width, height)
         }
-        img.src = obj.src // 一定要放在onload后面，不然IE会报错
+        img.src = obj.src // 执行到这一句开始加载图片，一定要放在onload后面，不然IE会报错（第二次打开在有缓存时执行顺序出错）
       })
       return clonedGroups
     })
