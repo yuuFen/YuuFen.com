@@ -76,12 +76,19 @@ export default {
       this.openApp(appId, event)
     })
   },
+  mounted() {
+    this.resizeMobile()
+    this.resizeMobileBgImg()
+    window.addEventListener('resize', this.resizeMobile)
+    window.addEventListener('resize', this.resizeMobileBgImg)
+  },
   methods: {
     openApp(name, event) {
       this.inApp = true
       this.inAppId = name
 
-      this.$nextTick(() => { // 需要等InApp创建后才能操作它
+      this.$nextTick(() => {
+        // 需要等InApp创建后才能操作它
         const mobile = document.getElementById('mobile')
         const mobileLeft = mobile.offsetLeft
         const mobileTop = mobile.offsetTop
@@ -98,11 +105,12 @@ export default {
       const y = this.lastAppOpenPosition[1]
       setInAppAnimation('0', '0', '100%', '100%', '1', x, y, '0', '0', '0')
 
-      setTimeout(() => {  // 等setInAppAnimation执行完后再销毁InApp
+      setTimeout(() => {
+        // 等setInAppAnimation执行完后再销毁InApp
         this.inApp = false
         this.statusTheme = 'default'
         this.inAppId = null
-      }, openAppDuration * 1000)  
+      }, openAppDuration * 1000)
     },
     changeLang() {
       const lang = this.lang === 'zh' ? 'en' : 'zh'
@@ -168,12 +176,6 @@ export default {
         margin: [0, 1, 1, 1],
       })
     },
-  },
-  mounted() {
-    this.resizeMobile()
-    this.resizeMobileBgImg()
-    window.addEventListener('resize', this.resizeMobile)
-    window.addEventListener('resize', this.resizeMobileBgImg)
   },
 }
 </script>

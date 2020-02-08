@@ -1,0 +1,41 @@
+.mobile-inapp {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  overflow: hidden;
+  width: 100%; // 初始化,为了mounted时提供
+  height: 100%;
+}
+  .inapp-head {
+    @extend %system-status-content;
+    height: $mobile-head-height;
+    padding-top: $system-status-height;
+    font-size: $fs-lg;
+    color: $clr-text-dark;
+
+    .status-theme-dark & {
+      color: $clr-text-lightest;
+    }
+  }
+
+    .inapp-head-center{
+      position: absolute;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-weight: bold;
+    }
+    .inapp-head-right{
+      position: relative; // 使脱离文档流
+      float: right;
+      text-align: right;
+      padding-right: 10px;
+      padding-top: 0.2em;
+      font-size: 0.9em;
+      color: $clr-text-lighter;
+
+      .status-theme-light & {
+        color: $clr-text;
+      }
+    }
