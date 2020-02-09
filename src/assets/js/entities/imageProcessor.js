@@ -1,4 +1,7 @@
+import { getCanvas } from '../utils/image'
+import sunglass from '../utils/sunglass'
 import colors from '../constants/colors'
+
 export default class ImageProcessor {
   constructor() {}
 
@@ -11,7 +14,7 @@ export default class ImageProcessor {
    */
   doSunglass(srcImage, distWidth, distHeight) {
     const resized = this._resize(srcImage, distWidth, distHeight)
-    const canvas = this._sunglass(resized, colors.palette)
+    const canvas = sunglass(resized, colors.palette)
     return canvas.toDataURL()
   }
 
@@ -22,15 +25,10 @@ export default class ImageProcessor {
    * @param {number} distHeight target height
    * @return: {HTMLCanvasElement} resized canvas
    */
-  _resize(srcImage, distWidth, distHeight) {}
-
-  /**
-   * @description: Filter image with the palette
-   * @param {Image | HTMLCanvasElement} image      input image
-   * @param {string[]}                  [palette=['#fff','#999','#555','#222']]
-   *                                        colors of output image
-   * @param {string}                    [colorSpace='rgb'] color space
-   * @return {HTMLCanvasElement}        output image on canvas
-   */
-  _sunglass(image, palette, colorsSpace) {}
+  _resize(srcImage, distWidth, distHeight) {
+    const distCanvas = getCanvas(distWidth, distHeight)
+    const ctx = distCanvas.getContext('2d')
+    ctx.drawImage(srcImage, 0, 0, distWidth, distHeight)
+    return distCanvas
+  }
 }

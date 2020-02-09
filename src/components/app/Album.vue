@@ -4,7 +4,7 @@
       <h3>{{ group.title[lang] }}</h3>
       <div class="album-group-content">
         <div class="album-photo-container" v-for="(photo, index) in group.photos" :key="index">
-          <a href="" class="album-photo-img pixel-img" :style="{ 'background-image': photo.thumbnail ? `url('${photo.thumbnail}')` : 'transparent' }"></a>
+          <a class="album-photo-img pixel-img" :style="{ 'background-image': photo.thumbnail ? `url('${photo.thumbnail}')` : 'transparent' }"></a>
         </div>
       </div>
     </div>
