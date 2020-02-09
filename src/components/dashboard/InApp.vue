@@ -5,10 +5,10 @@
       <div class="inapp-head-right" @click="exit">{{ lang === 'en' ? 'back' : '返回' }}</div>
     </div>
     <div class="inapp-body">
-      <m-app-wechat v-if="appId==='wechat'"></m-app-wechat>
-      <m-app-album v-if="appId==='album'"></m-app-album>
-      <m-app-zhifubao v-if="appId==='zhifubao'"></m-app-zhifubao>
-      <m-app-comment v-if="appId==='comment'"></m-app-comment>
+      <m-app-wechat v-if="appId === 'wechat'"></m-app-wechat>
+      <m-app-album v-if="appId === 'album'"></m-app-album>
+      <m-app-zhifubao v-if="appId === 'zhifubao'"></m-app-zhifubao>
+      <m-app-comment v-if="appId === 'comment'"></m-app-comment>
     </div>
   </div>
 </template>
@@ -38,6 +38,9 @@ export default {
   mounted() {
     this.resize()
     window.addEventListener('resize', this.resize)
+  },
+  destroyed() {
+    window.removeEventListener('resize', this.resize)
   },
   methods: {
     exit() {

@@ -23,6 +23,7 @@
           <m-app app-id="github"></m-app>
         </div>
       </div>
+      <!-- TO DO: 优化 Album 的加载 -->
       <m-inapp v-if="inApp" :app-id="inAppId" @exit="exitApp"></m-inapp>
     </div>
   </div>

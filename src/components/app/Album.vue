@@ -23,40 +23,42 @@ export default {
   data() {
     return {
       lang: getLang(),
-      album: [],
+      album: album,
       openImgSrc: null,
     }
   },
   mounted() {
-    this.album = album.map((group) => {
-      const clonedGroups = Object.assign({}, group)
-      clonedGroups.photos = clonedGroups.photos.map((url) => {
-        return {
-          src: url,
-          thumbnail: null,
-        }
-      })
-      clonedGroups.photos.forEach((obj) => {
-        const img = new Image()
-        img.onload = () => {
-          let width = img.width
-          let height = img.height
-          // 保持比例缩小
-          if (width > height) {
-            width = (thumbnailSize / height) * width
-            height = thumbnailSize
-          } else {
-            height = (thumbnailSize / width) * height
-            width = thumbnailSize
+    setTimeout(() => {
+      this.album = album.map((group) => {
+        const clonedGroups = Object.assign({}, group)
+        clonedGroups.photos = clonedGroups.photos.map((url) => {
+          return {
+            src: url,
+            thumbnail: null,
           }
-          obj.thumbnailWidth = width
-          obj.thumbnailHeight = height
-          obj.thumbnail = imageProcessor.doSunglass(img, width, height)
-        }
-        img.src = obj.src // 执行到这一句开始加载图片，一定要放在onload后面，不然IE会报错（第二次打开在有缓存时执行顺序出错）
+        })
+        clonedGroups.photos.forEach((obj) => {
+          const img = new Image()
+          img.onload = () => {
+            let width = img.width
+            let height = img.height
+            // 保持比例缩小
+            if (width > height) {
+              width = (thumbnailSize / height) * width
+              height = thumbnailSize
+            } else {
+              height = (thumbnailSize / width) * height
+              width = thumbnailSize
+            }
+            obj.thumbnailWidth = width
+            obj.thumbnailHeight = height
+            obj.thumbnail = imageProcessor.doSunglass(img, width, height)
+          }
+          img.src = obj.src // 执行到这一句开始加载图片，一定要放在onload后面，不然IE会报错（第二次打开在有缓存时执行顺序出错）
+        })
+        return clonedGroups
       })
-      return clonedGroups
-    })
+    }, 400)
   },
 }
 </script>
