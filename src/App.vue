@@ -78,10 +78,17 @@ export default {
   },
   mounted() {
     // 阻止手机的实体返回键
+    const that = this
     history.pushState(null, null, location.href)
     window.addEventListener('popstate', function(event) {
       history.pushState(null, null, location.href)
       //此处加入回退时你要执行的代码
+      if (that.inApp) {
+        // 不知道为什么异步顺畅一点
+        setTimeout(() => {
+          that.exitApp()
+        })
+      }
     })
 
     this.resizeMobile()
