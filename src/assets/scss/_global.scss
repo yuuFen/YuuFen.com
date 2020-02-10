@@ -1,14 +1,14 @@
-%clearfix {
-  &::before,
-  &::after {
-    content: ' ';
-    display: table;
-  }
+// %clearfix {
+//   &::before,
+//   &::after {
+//     content: ' ';
+//     display: table;
+//   }
 
-  &::after {
-    clear: both;
-  }
-}
+//   &::after {
+//     clear: both;
+//   }
+// }
 
 %text-shadow {
   text-shadow: 1px 1px rgba($clr-primary-dark, 0.5);

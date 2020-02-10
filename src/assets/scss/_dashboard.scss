@@ -16,7 +16,7 @@
 
 .app-group {
   width: 100%;
-  @extend %clearfix;
+  // @extend %clearfix;
   box-sizing: border-box;
   overflow: hidden;
   @extend %nearest-neighbor;
@@ -29,7 +29,7 @@
   @extend %nearest-neighbor;
 }
 .app-group-content {
-  padding: $spacing-sm 0;
+  padding-top: $spacing-sm;
 }
 .dashboard-bottom {
   position: absolute;

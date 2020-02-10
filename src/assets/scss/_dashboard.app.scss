@@ -5,8 +5,9 @@ $app-depth: $app-size * $app-img-depth / $app-img-size;
 $msg-counter-size: 20px;
 
 .app {
-  float: left;
+  // float: left;
   width: 25%;
+  display: inline-block;
   box-sizing: border-box;
   text-align: center;
   margin-bottom: 10px;
