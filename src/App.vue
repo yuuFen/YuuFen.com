@@ -25,6 +25,9 @@
       </div>
       <!-- TO DO: 优化 Album 的加载 -->
       <m-inapp v-if="inApp" :app-id="inAppId" @exit="exitApp"></m-inapp>
+      <div class="toast-wrap">
+        <span class="toast-msg"></span>
+      </div>
     </div>
   </div>
 </template>
@@ -57,6 +60,17 @@ function setInAppAnimation(startX, startY, startW, startH, startOp, endX, endY, 
   })
 }
 
+function toast(msg) {
+  setTimeout(function() {
+    document.getElementsByClassName('toast-wrap')[0].getElementsByClassName('toast-msg')[0].innerHTML = msg
+    var toastTag = document.getElementsByClassName('toast-wrap')[0]
+    toastTag.className = toastTag.className.replace('toastAnimate', '')
+    setTimeout(function() {
+      toastTag.className = toastTag.className + ' toastAnimate'
+    }, 100)
+  })
+}
+
 export default {
   name: 'app',
   data() {
@@ -80,15 +94,25 @@ export default {
   mounted() {
     // 阻止手机的实体返回键
     const that = this
+    let first = null
     history.pushState(null, null, location.href)
     window.addEventListener('popstate', function(event) {
-      history.pushState(null, null, location.href)
       //此处加入回退时你要执行的代码
       if (that.inApp) {
+        history.pushState(null, null, location.href)
         // 不知道为什么异步顺畅一点
         setTimeout(() => {
           that.exitApp()
         })
+      } else {
+        if (first === null) {
+          first = Date.now()
+          toast('再按一次退出应用')
+          setTimeout(() => {
+            history.pushState(null, null, location.href)
+            first = null
+          }, 1000)
+        }
       }
     })
 
