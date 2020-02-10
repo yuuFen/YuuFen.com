@@ -1,5 +1,5 @@
 <template>
-  <div style="height:100vh">
+  <div>
     <a @click="changeLang()" id="lang-config" :class="'lang-' + lang"></a>
     <div id="mobile" :class="'status-theme-' + statusTheme" :style="`background-image: url(${mobileBgImg})`">
       <div id="system-status">
@@ -194,7 +194,7 @@ export default {
       mobile.style.marginTop = '-' + height / 2 + 'px'
       // 移动元素的定位标识点至body的正中间
       mobile.style.top = '50%'
-      mobile.style.left = '50%'
+      // mobile.style.left = '50%'
     },
     resizeMobileBgImg() {
       const mobile = document.getElementById('mobile')
