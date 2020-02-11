@@ -20,7 +20,8 @@ export default {
     return {
       choices: [],
       isDialogOver: false,
-      messages:[]
+      messages: [],
+      isFirstMessage: true,
     }
   },
   methods: {
@@ -32,9 +33,10 @@ export default {
       if (text) {
         const sender = this.inkDialog.story.currentTags.indexOf('yuufen') > -1 ? SENDER.YUUFEN : SENDER.VISITOR
 
-        if (sender === SENDER.VISITOR) {
+        if (sender === SENDER.VISITOR || this.isFirstMessage) {
           this.appendMessage(new Message(sender, text))
           this.runNext()
+          this.isFirstMessage = false
         } else {
           setTimeout(() => {
             this.appendMessage(new Message(sender, text))

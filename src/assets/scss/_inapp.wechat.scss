@@ -1,0 +1,61 @@
+.inapp-wechat {
+  .ink-msg-container {
+    width: 100%;
+    height: 100%;
+  }
+    .msg-container{
+      position: absolute;
+      top: 0;
+      bottom: $bottom-input-height;
+      width: 100%;
+      overflow-y: auto;
+      padding: $spacing-sm $spacing-h;
+      -webkit-overflow-scrolling: touch;
+    }
+      .msg-group {
+        overflow-x: hidden;
+        overflow-y: auto;
+      }
+        .msg-row {
+          width: 100%;
+          margin-bottom: 10px;
+          p {
+            margin: 0
+          }
+        }
+        .msg-yuufen {
+          & + .msg-yuufen {
+            margin-top: -4px;
+          }
+        }
+        .msg-visitor {
+          & + .msg-visitor {
+            margin-top: -4px;
+          }
+        }
+          .msg {
+            display: inline-block;
+            padding: 10px 15px;
+            max-width: 75%;
+            word-wrap: break-word;
+            line-height: 20px;
+            font-size: $fs-basic;
+            @extend %nearest-neighbor;
+          }
+        .msg-visitor {
+          text-align: right;
+          .msg {
+            text-align: left;
+          }
+        }
+
+
+
+      .bottom-input {
+        position: fixed;
+        height: $bottom-input-height;
+        bottom: 0;
+        right: 0;
+        left: 0;
+      }
+}

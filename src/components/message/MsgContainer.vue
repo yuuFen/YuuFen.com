@@ -1,6 +1,8 @@
 <template>
-  <div>
-    <m-msg v-for="message in messages" :key="message.id" :message="message"></m-msg>
+  <div class="msg-container">
+    <div class="msg-group">
+      <m-msg v-for="message in messages" :key="message.id" :message="message"></m-msg>
+    </div>
     <m-bottom-input v-bind="$attrs"></m-bottom-input>
   </div>
 </template>
@@ -13,8 +15,6 @@ export default {
       default: () => [],
     },
   },
-  methods: {
-
-  },
+  methods: {},
 }
 </script>
