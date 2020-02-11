@@ -20,11 +20,41 @@
   text-shadow: 1px 1px rgba($clr-secondary-light, 0.5);
 }
 
+.close-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 20px;
+  padding: $spacing-sm $spacing-h;
+  &:before,&:after {
+    content: '';
+    display: block;
+    background-color: $clr-border;
+    width: 16px;
+    height: 2px;
+    position: relative;
+  }
+  &:before {
+    top: 10px;
+    transform: rotateZ(45deg);
+  }
+  &:after {
+    top: 8px;
+    transform: rotateZ(-45deg);
+  }
+}
+
 * {
   box-sizing: border-box;
   outline: none;
 }
-
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
 html, body {
   width: 100%;
   height: 100%;
