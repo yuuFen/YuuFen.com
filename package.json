@@ -10,8 +10,12 @@
   "dependencies": {
     "color": "^3.1.2",
     "core-js": "^3.4.3",
+    "inkjs": "^1.10.2",
     "js-cookie": "^2.2.1",
-    "vue": "^2.6.10"
+    "localStorage": "^1.0.4",
+    "n-zepto": "^1.2.0",
+    "vue": "^2.6.10",
+    "zepto": "^1.2.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.1.0",
