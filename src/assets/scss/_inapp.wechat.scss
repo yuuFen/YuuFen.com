@@ -49,13 +49,39 @@
           }
         }
 
-
-
       .bottom-input {
         position: fixed;
-        height: $bottom-input-height;
+        // height: $bottom-input-height;
         bottom: 0;
         right: 0;
         left: 0;
       }
+        .input-head {
+          height: 100%;
+        }
+          .input-head-text{
+            padding: 13px 15px;
+            color: $clr-text-light;
+          }
+
+        .input-body {
+          overflow: hidden;
+          .choices {
+            padding: 5px 0;
+            li {
+              margin-left: 35px;
+              list-style: disc;
+              a {
+                display: block;
+                padding: 10px 0;
+                height: 100%;
+                color: $clr-text;
+                text-decoration: none;
+                &:hover {
+                  text-decoration: none;
+                }
+              }
+            }
+          }
+        }
 }

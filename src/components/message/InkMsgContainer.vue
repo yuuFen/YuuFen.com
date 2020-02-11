@@ -45,6 +45,9 @@ export default {
         }
       } else {
         this.choices = this.inkDialog.story.currentChoices
+        if (!this.choices.length) {
+          this.isDialogOver = true
+        }
       }
     },
     respond(choice) {
