@@ -16,10 +16,6 @@ export default {
       type: Object,
       default: () => {},
     },
-    ignoreAnimation: {
-      type: Boolean,
-      default: false,
-    },
   },
   data() {
     return {
@@ -48,7 +44,7 @@ export default {
     },
   },
   mounted() {
-    if (!this.ignoreAnimation && this.message.sender === SENDER.YUUFEN) {
+    if (!this.message.isFromJson && this.message.sender === SENDER.YUUFEN) {
       this.msgContent = '.'
       setTimeout(() => {
         this.msgContent = '..'
@@ -59,6 +55,20 @@ export default {
       setTimeout(() => {
         this.msgContent = this.message.text
       }, 1500)
+    } else if (this.message.isFromJson) {
+      this.msgContent = this.message.text
+      setTimeout(() => {
+        this.resize()
+      }, 200)
+      setTimeout(() => {
+        this.resize()
+      }, 300)
+      setTimeout(() => {
+        this.resize()
+      }, 500)
+      setTimeout(() => {
+        this.resize()
+      }, 1000)
     } else {
       this.msgContent = this.message.text
     }
