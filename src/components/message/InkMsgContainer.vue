@@ -35,8 +35,8 @@ export default {
 
         if (sender === SENDER.VISITOR || this.isFirstMessage) {
           this.appendMessage(new Message(sender, text))
-          this.runNext()
           this.isFirstMessage = false
+          this.runNext()
         } else {
           setTimeout(() => {
             this.appendMessage(new Message(sender, text))
