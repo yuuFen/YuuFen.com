@@ -19,6 +19,8 @@ import MsgContainer from './message/MsgContainer'
 import Msg from './message/Msg'
 import BottomInput from './message/BottomInput'
 
+import FullscreenImg from './misc/FullscreenImg'
+
 Vue.component('m-status-time', StatusTime)
 Vue.component('m-status-signal', StatusSignal)
 
@@ -37,3 +39,5 @@ Vue.component('m-ink-msg-container', InkMsgContainer)
 Vue.component('m-msg-container', MsgContainer)
 Vue.component('m-msg', Msg)
 Vue.component('m-bottom-input', BottomInput)
+
+Vue.component('m-fullscreen-img', FullscreenImg)
