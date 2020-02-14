@@ -10,11 +10,13 @@ export default [
     id: 1,
     groups: [
       { title: { zh: '社交网络账号', en: 'Social Networks' }, apps: ['gitee', 'github', 'dribbble', 'weibo', 'douban', 'zhihu', 'bilibili'] },
-      { title: { zh: '其他', en: 'Others' }, apps: ['blog', 'email', 'comment'] },
+      { title: { zh: '联系方式', en: 'Contacts ' }, apps: ['blog', 'email', 'comment'] },
     ],
   },
   {
     id: 2,
-    groups: [],
+    groups: [
+      { title: { zh: '小工具', en: 'Tools' }, apps: [] },
+    ],
   },
 ]

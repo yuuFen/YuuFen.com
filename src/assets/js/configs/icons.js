@@ -1,4 +1,4 @@
-import themes from './themes'
+import themes from '../constants/themes'
 
 export default {
   douban: {
@@ -12,8 +12,8 @@ export default {
   },
   tingxie: {
     name: {
-      zh: '听写',
-      en: 'Tingxie',
+      zh: '***',
+      en: '***',
     },
     pos: [1, 4],
     logoTheme: themes.medium,
@@ -30,8 +30,8 @@ export default {
   },
   xinzhitong: {
     name: {
-      zh: '新职通',
-      en: 'Xinzhitong',
+      zh: '***',
+      en: '***',
     },
     pos: [0, 4],
     logoTheme: themes.dark,

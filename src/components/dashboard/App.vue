@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import icons from '../../assets/js/constants/icons'
+import icons from '../../assets/js/configs/icons'
 import { getPixelImage } from '../../assets/js/utils/image'
 import colors from '../../assets/js/constants/colors'
 import { getLang } from '../../assets/js/utils/lang'

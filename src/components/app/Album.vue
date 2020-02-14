@@ -13,8 +13,10 @@
       </div>
     </div>
     <m-fullscreen-img v-if="openedImgSrc" @close="closeOpenedImg()">
-      <!-- <img :src="openedImgSrc" class="fullscreen-content" /> -->
-      <canvas v-if="hasThumbnailCanvas" ref="thumbnailCanvas" class="pixel-img fullscreen-content"></canvas>
+      <keep-alive>
+        <img :src="openedImgThumbnail" v-if="hasThumbnailCanvas" @click="change" ref="thumbnailCanvas" class="pixel-img fullscreen-content" />
+        <img :src="openedImgSrc" class="fullscreen-content" @click="change" v-else />
+      </keep-alive>
     </m-fullscreen-img>
   </div>
 </template>
@@ -33,41 +35,44 @@ export default {
       lang: getLang(),
       photos: album,
       openedImgSrc: null,
+      openedImgThumbnail: null,
       hasThumbnailCanvas: false,
     }
   },
   methods: {
+    change() {
+      this.hasThumbnailCanvas = !this.hasThumbnailCanvas
+    },
     openImg(photo) {
       this.openedImgSrc = photo.src
+      this.openedImgThumbnail = photo.thumbnail
+
       this.hasThumbnailCanvas = true
 
-      this.$nextTick(() => {
-        const canvas = this.$refs.thumbnailCanvas
-        canvas.width = photo.thumbnailWidth
-        canvas.height = photo.thumbnailHeight
+      // this.$nextTick(() => {
+      //   const canvas = this.$refs.thumbnailCanvas
+      //   canvas.width = photo.thumbnailWidth
+      //   canvas.height = photo.thumbnailHeight
 
-        const ctx = canvas.getContext('2d')
-        const img = new Image()
-        img.onload = () => {
-          ctx.drawImage(img, 0, 0)
-          ctx.globalCompositeOperation = 'destination-out'
+      //   const ctx = canvas.getContext('2d')
+      //   const img = new Image()
+      //   img.onload = () => {
+      //     ctx.drawImage(img, 0, 0)
+      //     // ctx.globalCompositeOperation = 'destination-out'
 
-          const duration = 1000
-          const start = Date.now()
+      //     // const duration = 1000
+      //     // const start = Date.now()
 
-          let frameCnt = 0
-          const render = () => {
+      //     // let frameCnt = 0
+      //     // const render = () => {
 
-          }
-
-          
-        }
-        img.src = photo.thumbnail
-      })
+      //     // }
+      //   }
+      //   img.src = photo.thumbnail
+      // })
     },
     closeOpenedImg() {
       this.openedImgSrc = null
-      this.hasThumbnailCanvas = false
     },
   },
   mounted() {

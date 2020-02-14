@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import icons from '../../assets/js/constants/icons'
+import icons from '../../assets/js/configs/icons'
 import { getLang } from '../../assets/js/utils/lang'
 import { getPixelImage } from '../../assets/js/utils/image'
 import themes from '../../assets/js/constants/themes'

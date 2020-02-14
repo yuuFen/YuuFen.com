@@ -37,7 +37,7 @@ import { getLang, setLang } from './assets/js/utils/lang'
 import colors from './assets/js/constants/colors'
 import { getPixelImage } from './assets/js/utils/image'
 import pagesConfig from './assets/js/configs/pages'
-import icons from './assets/js/constants/icons'
+import icons from './assets/js/configs/icons'
 
 const openAppDuration = 0.3
 

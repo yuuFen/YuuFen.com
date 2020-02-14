@@ -8,7 +8,7 @@ export default [
   // },
   {
     title: {
-      zh: '摄影作品',
+      zh: '摄影',
       en: 'photographys',
     },
     photos: [
@@ -29,9 +29,9 @@ export default [
   // },
   {
     title: {
-      zh: '日常照片',
+      zh: '日常',
       en: 'Routine',
     },
-    photos: ['/album/daily/1.jpg', '/album/daily/2.jpg', '/album/daily/3.jpg', '/album/daily/4.jpg'],
+    photos: ['/album/daily/3.jpg'],
   },
 ]
