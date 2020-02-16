@@ -77,3 +77,25 @@ body {
 .pixel-img {
   @extend %nearest-neighbor;
 }
+
+@keyframes bounceIn {
+    from, to {
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
+    }
+
+    from {
+        transform: scale(0);
+    }
+
+    40% {
+        transform: scale(1.03);
+    }
+
+    75% {
+        transform: scale(0.98);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
