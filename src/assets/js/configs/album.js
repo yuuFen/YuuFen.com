@@ -9,7 +9,7 @@ export default [
   {
     title: {
       zh: '摄影',
-      en: 'photographys',
+      en: 'Photographys',
     },
     photos: [
       '/album/photography/1.jpg',
@@ -18,6 +18,13 @@ export default [
       '/album/photography/4.jpg',
       '/album/photography/5.jpg',
       '/album/photography/6.jpg',
+      '/album/photography/7.jpg',
+      '/album/photography/8.jpg',
+      '/album/photography/9.jpg',
+      '/album/photography/10.jpg',
+      '/album/photography/11.jpg',
+      '/album/photography/12.jpg',
+      '/album/photography/13.jpg',
     ],
   },
   // {
@@ -32,6 +39,6 @@ export default [
       zh: '日常',
       en: 'Routine',
     },
-    photos: ['/album/daily/3.jpg'],
+    photos: ['/album/daily/1.jpg', '/album/daily/2.jpg', '/album/daily/3.jpg'],
   },
 ]

@@ -4,6 +4,8 @@ export default [
     groups: [
       { title: { zh: 'App作品', en: 'Apps' }, apps: ['xinzhitong', 'tingxie'] },
       { title: { zh: '网页作品', en: 'Websites' }, apps: [] },
+      { title: { zh: 'GUI应用', en: 'GUI Apps' }, apps: [] },
+      { title: { zh: '小玩意', en: 'Gadgets' }, apps: [] },
     ],
   },
   {
