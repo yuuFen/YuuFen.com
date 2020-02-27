@@ -10,6 +10,24 @@ export default {
     logoTheme: themes.medium,
     link: 'https://www.douban.com/',
   },
+  resume: {
+    name: {
+      zh: '简历',
+      en: 'Resume',
+    },
+    pos: [2, 4],
+    logoTheme: themes.medium,
+    link: 'https://www.douban.com/',
+  },
+  practice: {
+    name: {
+      zh: '练习集',
+      en: 'Practice',
+    },
+    pos: [3, 4],
+    logoTheme: themes.light,
+    link: '/practice',
+  },
   tingxie: {
     name: {
       zh: '***',
