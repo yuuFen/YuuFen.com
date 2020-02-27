@@ -1,24 +1,7 @@
-# yuufen
+# 我的个人博客 https://yuufen.com/
 
-## Project setup
-```
-yarn install
-```
+参考 http://zhangwenli.com/ 用 vue@cli3(4) 实现了一遍，不得不说小姐姐太厉害了！！！
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+修复或者优化了一些原站存在的问题或不足，打算全部完成了之后鼓起勇气联系一下她……
 
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+想把这点挂载 Wechat 的对话里的，但是暂时还没有想法来完成这个对话……

@@ -30,8 +30,8 @@ export default {
   },
   tingxie: {
     name: {
-      zh: '***',
-      en: '***',
+      zh: '听写',
+      en: 'tingxie',
     },
     pos: [1, 4],
     logoTheme: themes.medium,
@@ -48,12 +48,12 @@ export default {
   },
   xinzhitong: {
     name: {
-      zh: '***',
-      en: '***',
+      zh: '新职通',
+      en: 'xinzhitong',
     },
     pos: [0, 4],
     logoTheme: themes.dark,
-    link: 'https://www.douban.com/',
+    link: 'https://github.com/404',
   },
   bilibili: {
     name: {
@@ -71,7 +71,7 @@ export default {
     },
     pos: [1, 1],
     logoTheme: themes.light,
-    link: 'https://weibo.com/',
+    link: 'https://weibo.com/u/6625495890',
   },
   zhihu: {
     name: {
@@ -89,7 +89,7 @@ export default {
     },
     pos: [0, 2],
     logoTheme: themes.light,
-    link: 'https://github.com/yuuFen',
+    link: 'https://github.com/yuuFen/YuuFen',
   },
   dribbble: {
     name: {

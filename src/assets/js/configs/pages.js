@@ -11,7 +11,8 @@ export default [
   {
     id: 1,
     groups: [
-      { title: { zh: '社交网络账号', en: 'Social Networks' }, apps: ['gitee', 'github', 'dribbble', 'weibo', 'douban', 'zhihu', 'bilibili'] },
+      // { title: { zh: '社交网络账号', en: 'Social Networks' }, apps: ['gitee', 'github', 'dribbble', 'weibo', 'douban', 'zhihu', 'bilibili'] },
+      { title: { zh: '社交网络账号', en: 'Social Networks' }, apps: ['github', 'dribbble', 'weibo',  'douban','zhihu', 'bilibili'] },
       { title: { zh: '联系方式', en: 'Contacts ' }, apps: ['blog', 'email', 'resume', 'comment'] },
     ],
   },
