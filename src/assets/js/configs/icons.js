@@ -17,7 +17,7 @@ export default {
     },
     pos: [2, 4],
     logoTheme: themes.medium,
-    link: 'https://www.douban.com/',
+    link: 'https://github.com/404',
   },
   practice: {
     name: {
@@ -35,7 +35,7 @@ export default {
     },
     pos: [1, 4],
     logoTheme: themes.medium,
-    link: 'https://www.douban.com/',
+    link: 'https://github.com/yuuFen/mini-program-of-dictation',
   },
   gitee: {
     name: {
@@ -62,7 +62,7 @@ export default {
     },
     pos: [1, 0],
     logoTheme: themes.dark,
-    link: 'https://space.bilibili.com/',
+    link: 'https://space.bilibili.com/561851',
   },
   weibo: {
     name: {
@@ -89,7 +89,7 @@ export default {
     },
     pos: [0, 2],
     logoTheme: themes.light,
-    link: 'https://github.com/yuuFen/YuuFen',
+    link: 'https://github.com/yuuFen',
   },
   dribbble: {
     name: {
@@ -116,7 +116,7 @@ export default {
     },
     pos: [3, 2],
     logoTheme: themes.light,
-    link: 'http://yuufen.com/blog/',
+    link: 'http://yuufen.com/blog',
   },
   comment: {
     name: {
