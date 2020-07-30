@@ -3,8 +3,8 @@
     <div class="input-head">
       <div class="input-head-text" @click="togglePrompt">
         <span v-if="!isDialogOver && choices.length">说点什么……</span>
-        <span v-else-if="!isDialogOver && !choices.length">等待栗子回复……</span>
-        <span v-else-if="isDialogOver">栗子下线了，过些时候再来看看吧</span>
+        <span v-else-if="!isDialogOver && !choices.length">等待小鱼回复……</span>
+        <span v-else-if="isDialogOver">小鱼下线了，过些时候再来看看吧</span>
       </div>
       <a class="close-btn" @click="togglePrompt(false)" v-if="isPromptOpen"></a>
     </div>

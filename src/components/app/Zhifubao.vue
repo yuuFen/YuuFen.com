@@ -7,7 +7,7 @@
       <div>或支付宝转账至 me@yuufen.com</div>
     </div>
     <div class="zhifubao-about">
-      送栗子任意一本书，即可在下一个圣诞节的时候，收到一张栗子自制的圣诞明信片。Email 邮寄地址、邮编、收件人至
+      送小鱼任意一本书，即可在下一个圣诞节的时候，收到一张小鱼自制的圣诞明信片。Email 邮寄地址、邮编、收件人至
       <a href="mailto:me@yuufen.com">me@yuufen.com</a> 领取。
     </div>
   </div>

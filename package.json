@@ -9,13 +9,13 @@
   },
   "dependencies": {
     "color": "^3.1.2",
-    "core-js": "^3.4.3",
-    "inkjs": "^1.10.2",
+    "core-js": "^3.6.5",
+    "inkjs": "^1.11.0",
     "js-cookie": "^2.2.1",
     "localStorage": "^1.0.4",
     "n-zepto": "^1.2.0",
     "shortid": "^2.2.15",
-    "vue": "^2.6.10",
+    "vue": "^2.6.11",
     "zepto": "^1.2.0"
   },
   "devDependencies": {
@@ -27,7 +27,7 @@
     "eslint-plugin-vue": "^5.0.0",
     "sass": "^1.23.7",
     "sass-loader": "^8.0.0",
-    "vue-template-compiler": "^2.6.10"
+    "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
     "root": true,

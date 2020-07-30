@@ -2,10 +2,10 @@ export default [
   {
     id: 0,
     groups: [
-      { title: { zh: 'App 作品', en: 'Apps' }, apps: ['xinzhitong', 'tingxie'] },
-      { title: { zh: '网页作品', en: 'Websites' }, apps: [] },
-      { title: { zh: '桌面应用', en: 'Desktop' }, apps: [] },
-      { title: { zh: '小玩意', en: 'Gadgets' }, apps: [] },
+      { title: { zh: '作品', en: 'Apps' }, apps: ['xinzhitong', 'tingxie'] },
+      // { title: { zh: '网页作品', en: 'Websites' }, apps: [] },
+      // { title: { zh: '桌面应用', en: 'Desktop' }, apps: [] },
+      // { title: { zh: '小玩意', en: 'Gadgets' }, apps: [] },
     ],
   },
   {

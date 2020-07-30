@@ -39,6 +39,6 @@ export default [
       zh: '日常',
       en: 'Routine',
     },
-    photos: ['/album/daily/1.jpg', '/album/daily/2.jpg', '/album/daily/3.jpg'],
+    photos: ['/album/daily/1.jpg', '/album/daily/2.jpg'],
   },
 ]

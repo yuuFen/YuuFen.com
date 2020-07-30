@@ -8,7 +8,7 @@ export default {
     },
     pos: [0, 0],
     logoTheme: themes.medium,
-    link: 'https://www.douban.com/',
+    // link: 'https://www.douban.com/',
   },
   resume: {
     name: {
@@ -17,17 +17,17 @@ export default {
     },
     pos: [2, 4],
     logoTheme: themes.medium,
-    link: 'https://github.com/404',
+    // link: 'https://github.com/404',
   },
-  practice: {
-    name: {
-      zh: '练习集',
-      en: 'Practice',
-    },
-    pos: [3, 4],
-    logoTheme: themes.light,
-    link: '/practice',
-  },
+  // practice: {
+  //   name: {
+  //     zh: '练习集',
+  //     en: 'Practice',
+  //   },
+  //   pos: [3, 4],
+  //   logoTheme: themes.light,
+  //   link: '/practice',
+  // },
   tingxie: {
     name: {
       zh: '听写',
@@ -35,17 +35,17 @@ export default {
     },
     pos: [1, 4],
     logoTheme: themes.medium,
-    link: 'https://github.com/yuuFen/mini-program-of-dictation',
+    link: 'https://github.com/yuuFen/dictation-assistant',
   },
-  gitee: {
-    name: {
-      zh: '码云',
-      en: 'Gitee',
-    },
-    pos: [0, 3],
-    logoTheme: themes.medium,
-    link: 'https://gitee.com/Yu_Fen/',
-  },
+  // gitee: {
+  //   name: {
+  //     zh: '码云',
+  //     en: 'Gitee',
+  //   },
+  //   pos: [0, 3],
+  //   logoTheme: themes.medium,
+  //   link: 'https://gitee.com/Yu_Fen/',
+  // },
   xinzhitong: {
     name: {
       zh: '新职通',
@@ -53,7 +53,7 @@ export default {
     },
     pos: [0, 4],
     logoTheme: themes.dark,
-    link: 'https://github.com/404',
+    // link: 'https://github.com/404',
   },
   bilibili: {
     name: {
@@ -71,7 +71,8 @@ export default {
     },
     pos: [1, 1],
     logoTheme: themes.light,
-    link: 'https://weibo.com/u/6625495890',
+    // link: 'https://weibo.com/u/6625495890',
+    // link: 'https://weibo.com/',
   },
   zhihu: {
     name: {
@@ -80,7 +81,7 @@ export default {
     },
     pos: [3, 1],
     logoTheme: themes.light,
-    link: 'https://www.zhihu.com/',
+    // link: 'https://www.zhihu.com/',
   },
   github: {
     name: {
